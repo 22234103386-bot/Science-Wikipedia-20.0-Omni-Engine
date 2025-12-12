@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omni-Science Simulator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              sci: {
+                base: '#f8fafc', // Very light gray background
+                panel: '#ffffff', // White panels
+                text: '#1e293b', // Slate 800 for text
+                subtext: '#64748b', // Slate 500 for secondary text
+                accent: '#2563eb', // Royal Blue (Primary)
+                accentHover: '#1d4ed8',
+                border: '#e2e8f0', // Light border
+              }
+            },
+            animation: {
+              'shake': 'shake 0.5s infinite',
+              'explode': 'explode 0.8s ease-out forwards',
+              'drift': 'drift 3s linear infinite',
+              'flicker': 'flicker 0.2s infinite alternate',
+            },
+            keyframes: {
+              shake: {
+                '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
+                '25%': { transform: 'translate(2px, 2px) rotate(-1deg)' },
+                '50%': { transform: 'translate(-2px, -2px) rotate(1deg)' },
+                '75%': { transform: 'translate(1px, -1px) rotate(0deg)' },
+              },
+              explode: {
+                '0%': { transform: 'scale(0)', opacity: '1' },
+                '100%': { transform: 'scale(4)', opacity: '0' },
+              },
+              drift: {
+                '0%': { transform: 'translateY(0) scale(1)', opacity: '0.8' },
+                '100%': { transform: 'translateY(-100px) scale(2)', opacity: '0' },
+              },
+              flicker: {
+                '0%': { opacity: '1' },
+                '100%': { opacity: '0.6' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body { 
+        background-color: #f8fafc; 
+        color: #1e293b; 
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .perspective-container { perspective: 1200px; }
+      
+      /* Clean Card Style */
+      .ui-panel { 
+        background: #ffffff; 
+        border: 1px solid #e2e8f0; 
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      
+      .preserve-3d { transform-style: preserve-3d; }
+      
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #f1f5f9; }
+      ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+      ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

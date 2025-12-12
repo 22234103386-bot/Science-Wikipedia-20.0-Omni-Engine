@@ -1,0 +1,5 @@
+{
+  "name": "Science Wikipedia 20.0 Omni-Engine",
+  "description": "An AI-powered 3D science simulation engine capable of generating broadcast-quality 3D VFX, 'What If' scenarios, and high-definition particle simulations.",
+  "requestFramePermissions": []
+}
